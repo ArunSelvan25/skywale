@@ -46,12 +46,12 @@
         <div class="container-scroller">
 
             <div class="container-fluid page-body-wrapper" style="padding-top: 60px;">
-                @if(Auth::guard('admin')->user() != '' || Auth::guard('admin')->user() != null)
-                    @include('admin.layouts.navbar')
+                @if(Auth::guard('sub-user')->user() != '' || Auth::guard('sub-user')->user() != null)
+                    @include('sub-user.layouts.navbar')
 
-                    @include('admin.layouts.sidebar')
+                    @include('sub-user.layouts.sidebar')
 
-                    @include('admin.layouts.right_sidebar')
+                    @include('sub-user.layouts.right_sidebar')
                 @endif
                 @yield('content')
 
