@@ -67,16 +67,16 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
     <script type="text/javascript">
         @if(Session::has('error'))
-        var toastHTML = "{{Session::get('error')}}";
-        toastr["error"](toastHTML);
+            var toastHTML = "{{Session::get('error')}}";
+            toastr["error"](toastHTML);
         @endif
         @if(Session::has('success'))
-        var toastHTML = "{{Session::get('success')}}";
-        toastr["success"](toastHTML);
+            var toastHTML = "{{Session::get('success')}}";
+            toastr["success"](toastHTML);
         @endif
         @if($errors->any())
-        var toastHTML = '{{$errors->first()}}';
-        toastr["error"](toastHTML);
+            var toastHTML = '{{$errors->first()}}';
+            toastr["error"](toastHTML);
         @endif
 
         function showToastr(msg, title) {

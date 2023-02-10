@@ -64,7 +64,11 @@
 
     <!-- FontAwesome kit cdn -->
     <script src="https://kit.fontawesome.com/2463cc7a2e.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+
+    <script src="{{ asset('/vendors/datatables.net/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('/js/data-table.js') }}"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
     <script type="text/javascript">
         @if(Session::has('error'))
         var toastHTML = "{{Session::get('error')}}";
