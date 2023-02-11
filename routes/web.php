@@ -1,12 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\Auth\AdminAuthController;
-use App\Http\Controllers\Auth\SubAdminAuthConroller;
-use App\Http\Controllers\PropertyController;
-
 use App\Http\Controllers\Admin\AdminHouseOwnerController;
+use App\Http\Controllers\Auth\AdminAuthController;
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\SubAdminAuthConroller;
+use App\Http\Controllers\SubAdmin\PropertyController;
+use App\Http\Controllers\SubAdmin\SubAdminUserController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +53,8 @@ Route::post('/property/delete', [PropertyController::class, 'propertyDelete'])->
 
 
 // User routes
+Route::get('/users/list', [SubAdminUserController::class, 'index'])->name('users.users');
+
 Route::get('/login', [AuthController::class, 'getLogin'])->name('get-login');
 Route::post('/login', [AuthController::class, 'postLogin'])->name('post-login');
 Route::get('/register', [AuthController::class, 'getRegister'])->name('get-register');

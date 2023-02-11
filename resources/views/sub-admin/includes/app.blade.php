@@ -34,8 +34,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-
-
+<style>
+    @yield('style')
+</style>
 
     <!-- JS script -->
 
@@ -66,7 +67,9 @@
     <script src="https://kit.fontawesome.com/2463cc7a2e.js" crossorigin="anonymous"></script>
 
     <script src="{{ asset('/vendors/datatables.net/jquery.dataTables.js') }}"></script>
+<script src="{{ asset('/vendors/select2/select2.min.js')}}"></script>
     <script src="{{ asset('/js/data-table.js') }}"></script>
+<script src="{{ asset('/js/select2.js')}}"></script>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
     <script type="text/javascript">
