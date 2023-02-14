@@ -27,7 +27,7 @@ class AuthController extends Controller
         if (Auth::attempt($user)) {
             return redirect()->intended('dashboard')->with('success','Login successful');
         }
-  
+
         return redirect("login")->with('error','Login details are not valid');
     }
 
@@ -40,9 +40,10 @@ class AuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'property_id' => $request->property_id,
         ]);
 
-        return redirect("dashboard")->with('Login with your credenttials');
+        return back()->with('User created successfully');
     }
 
     public function dashboard()
@@ -50,7 +51,7 @@ class AuthController extends Controller
         if(Auth::check()){
             return view('welcome')->with('success','Login successful');
         }
-  
+
         return redirect("login")->with('error','Login to access dashboard');
     }
 

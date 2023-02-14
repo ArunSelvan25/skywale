@@ -32,8 +32,8 @@
     <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 <style>
     @yield('style')
 </style>
@@ -70,6 +70,8 @@
 <script src="{{ asset('/vendors/select2/select2.min.js')}}"></script>
     <script src="{{ asset('/js/data-table.js') }}"></script>
 <script src="{{ asset('/js/select2.js')}}"></script>
+<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
     <script type="text/javascript">

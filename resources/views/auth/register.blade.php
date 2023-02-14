@@ -10,7 +10,7 @@
     <div class="col-12 grid-margin">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Property Form</h4>
+                <h4 class="card-title">Users Form</h4>
                 <div class="main-panel">
                     <div class="content-wrapper">
                         <div class="card">
@@ -31,102 +31,102 @@
                                                             </tr>
                                                             </thead>
                                                             <tbody>
-                                                                                                                        @foreach($users as $user)
-                                                                                                                            <tr>
-                                                                                                                                <td>{{ $user->name }}</td>
-                                                                                                                                <td>{{ $user->email }}</td>
-                                                                                                                                <td>
-                                                                                                                                    <div class="row col-md-12">
-                                                                                                                                        <div class="form-group col-md-6">
-                                                                                                                                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editUser-{{$user->id}}">Edit</button>
-                                                                                                                                        </div>
-                                                                                                                                        <div class="form-group col-md-6">
-                                                                                                                                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#deleteUser-{{$user->id}}">Delete</button>
-                                                                                                                                        </div>
-                                                                                                                                    </div>
-                                                                                                                                </td>
-                                                                                                                            </tr>
+                                                                @foreach($users as $user)
+                                                                    <tr>
+                                                                        <td>{{ $user->name }}</td>
+                                                                        <td>{{ $user->email }}</td>
+                                                                        <td>
+                                                                            <div class="row col-md-12">
+                                                                                <div class="form-group col-md-6">
+                                                                                    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editUser-{{$user->id}}">Edit</button>
+                                                                                </div>
+                                                                                <div class="form-group col-md-6">
+                                                                                    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#deleteUser-{{$user->id}}">Delete</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
 
 
-{{--                                                                                                                             Edit Modal--}}
-                                                                                                                            <div class="modal fade" id="editUser-{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                                                                                                <div class="modal-dialog modal-lg" role="document">
-                                                                                                                                    <div class="modal-content">
-                                                                                                                                        <div class="modal-header">
-                                                                                                                                            <h5 class="modal-title" id="exampleModalLabel">Update property</h5>
-                                                                                                                                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                                                                                                                                <span aria-hidden="true">&times;</span>
-                                                                                                                                            </button>
-                                                                                                                                        </div>
-                                                                                                                                        <form class="form-sample" method="post" action="#">
+        {{--                                                                                                                             Edit Modal--}}
+                                                                    <div class="modal fade" id="editUser-{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                        <div class="modal-dialog modal-lg" role="document">
+                                                                            <div class="modal-content">
+                                                                                <div class="modal-header">
+                                                                                    <h5 class="modal-title" id="exampleModalLabel">Update property</h5>
+                                                                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                                                                        <span aria-hidden="true">&times;</span>
+                                                                                    </button>
+                                                                                </div>
+                                                                                <form class="form-sample" method="post" action="#">
 
-                                                                                                                                            <div class="modal-body">
-                                                                                                                                                @csrf
-                                                                                                                                                <p class="card-description">
+                                                                                    <div class="modal-body">
+                                                                                        @csrf
+                                                                                        <p class="card-description">
 
-                                                                                                                                                </p>
-                                                                                                                                                <input type="hidden" name="id" class="form-control" value="{{$user->id}}"/>
-                                                                                                                                                <div class="row">
-                                                                                                                                                    <div class="">
-                                                                                                                                                        <div class="form-group row">
-                                                                                                                                                            <label class="col-sm-3 col-form-label">Name</label>
-                                                                                                                                                            <div class="col-sm-9">
-                                                                                                                                                                <input type="text" name="name" class="form-control" value="{{$user->name}}"/>
-                                                                                                                                                            </div>
-                                                                                                                                                        </div>
-                                                                                                                                                    </div>
-                                                                                                                                                </div>
-                                                                                                                                                <div class="row">
-                                                                                                                                                    <div class="">
-                                                                                                                                                        <div class="form-group row">
-                                                                                                                                                            <label class="col-sm-3 col-form-label">Email</label>
-                                                                                                                                                            <div class="col-sm-9">
-                                                                                                                                                                <input type="text" name="facilities" class="form-control" value="{{$user->email}}"/>
-                                                                                                                                                            </div>
-                                                                                                                                                        </div>
-                                                                                                                                                    </div>
-                                                                                                                                                </div>
-                                                                                                                                            <div class="modal-footer">
-                                                                                                                                                <button type="submit" class="btn btn-success">Submit</button>
-                                                                                                                                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
-                                                                                                                                            </div>
-                                                                                                                                        </form>
+                                                                                        </p>
+                                                                                        <input type="hidden" name="id" class="form-control" value="{{$user->id}}"/>
+                                                                                        <div class="row">
+                                                                                            <div class="">
+                                                                                                <div class="form-group row">
+                                                                                                    <label class="col-sm-3 col-form-label">Name</label>
+                                                                                                    <div class="col-sm-9">
+                                                                                                        <input type="text" name="name" class="form-control" value="{{$user->name}}"/>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="row">
+                                                                                            <div class="">
+                                                                                                <div class="form-group row">
+                                                                                                    <label class="col-sm-3 col-form-label">Email</label>
+                                                                                                    <div class="col-sm-9">
+                                                                                                        <input type="text" name="facilities" class="form-control" value="{{$user->email}}"/>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    <div class="modal-footer">
+                                                                                        <button type="submit" class="btn btn-success">Submit</button>
+                                                                                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                                                                                    </div>
+                                                                                </form>
 
-                                                                                                                                    </div>
-                                                                                                                                </div>
-                                                                                                                            </div>
-{{--                                                                                                                             Edit modal end--}}
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+        {{--                                                                                                                             Edit modal end--}}
 
-{{--                                                                                                                             Delete Modal--}}
-                                                                                                                            <div class="modal fade" id="deleteUser-{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                                                                                                <div class="modal-content">
-                                                                                                                                    <div class="modal-header">
-                                                                                                                                        <h5 class="modal-title" id="exampleModalLabel">Delete user</h5>
-                                                                                                                                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                                                                                                                            <span aria-hidden="true">&times;</span>
-                                                                                                                                        </button>
-                                                                                                                                    </div>
-                                                                                                                                    <form class="form-sample" method="post" action="#">
+        {{--                                                                                                                             Delete Modal--}}
+                                                                    <div class="modal fade" id="deleteUser-{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title" id="exampleModalLabel">Delete user</h5>
+                                                                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <form class="form-sample" method="post" action="#">
 
-                                                                                                                                        <div class="modal-body">
-                                                                                                                                            @csrf
-                                                                                                                                            <p>
-                                                                                                                                                Do you really want to delete <b>{{$user->name}}</b>?
-                                                                                                                                            </p>
-                                                                                                                                            <input type="hidden" name="id" class="form-control" value="{{$user->id}}"/>
-                                                                                                                                        </div>
-                                                                                                                                        <div class="modal-footer">
-                                                                                                                                            <button type="submit" class="btn btn-success">Submit</button>
-                                                                                                                                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
-                                                                                                                                        </div>
-                                                                                                                                    </form>
+                                                                                <div class="modal-body">
+                                                                                    @csrf
+                                                                                    <p>
+                                                                                        Do you really want to delete <b>{{$user->name}}</b>?
+                                                                                    </p>
+                                                                                    <input type="hidden" name="id" class="form-control" value="{{$user->id}}"/>
+                                                                                </div>
+                                                                                <div class="modal-footer">
+                                                                                    <button type="submit" class="btn btn-success">Submit</button>
+                                                                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                                                                                </div>
+                                                                            </form>
 
-                                                                                                                                </div>
-                                                                                                                            </div>
-                                                                                                                            <div class="modal-dialog modal-lg" role="document">
-                                                                                                                            </div>
-{{--                                                                                                                             Delete Modal End--}}
-                                                                                                                        @endforeach
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-dialog modal-lg" role="document">
+                                                                    </div>
+        {{--                                                                                                                             Delete Modal End--}}
+                                                                @endforeach
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -145,7 +145,7 @@
 
                                         {{-- Create Property --}}
                                         <div class="col-md-6">
-                                            <form method="POST" action="#">
+                                            <form method="POST" action="{{route('post-register')}}">
                                                 @csrf
 
                                                 <div class="row mb-3">
@@ -190,17 +190,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="row mb-3">
-                                                    <label for="password" class="col-md-4 col-form-label text-md-end">Select Property</label>
-                                                    <div class="col-md-6">
-                                                        <select class="js-example-basic-single w-100">
-                                                            <option>Select property</option>
-                                                            @foreach($properties as $property)
-                                                                <option value="{{$property->id}}">{{$property->name}}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                </div>
+
 
 
 
@@ -209,6 +199,18 @@
 
                                                     <div class="col-md-6">
                                                         <input id="password-confirm" type="password" class="form-control custom-validate" name="password_confirmation" required autocomplete="new-password">
+                                                    </div>
+                                                </div>
+
+                                                <div class="row mb-3">
+                                                    <label for="password" class="col-md-4 col-form-label text-md-end">Select Property</label>
+                                                    <div class="col-md-6">
+                                                        <select name="property_id" class="js-example-basic-single w-100">
+                                                            <option>Select property</option>
+                                                            @foreach($properties as $property)
+                                                                <option value="{{$property->id}}">{{$property->name}}</option>
+                                                            @endforeach
+                                                        </select>
                                                     </div>
                                                 </div>
 

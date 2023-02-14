@@ -245,12 +245,23 @@
                                                     </div>
                                                 </div>
 
+
+
                                                 <div class="row">
                                                     <div class="form-group">
                                                         <button type="submit" class="btn btn-success">Success</button>
                                                     </div>
                                                 </div>
                                             </form>
+
+                                            <div class="grid-margin stretch-card">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">DropZOne</h4>
+                                                        <form action="{{ route('property.post-image') }}" class="dropzone" id="my-dropzone">@csrf</form>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -268,5 +279,8 @@
 
     <script>
         const url = window.location.origin;
+        let myDropzone = Dropzone("#my-element", {
+
+        });
     </script>
 @endsection

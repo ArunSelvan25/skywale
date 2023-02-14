@@ -57,4 +57,8 @@ class PropertyController extends Controller
         }
         return back()->with('success','Property deleted successfully');
     }
+
+    public function imageUpload(Request $request) {
+        dd($request->file('file')->getClientOriginalName());
+    }
 }

@@ -51,6 +51,8 @@ Route::post('/property/store', [PropertyController::class, 'propertyStore'])->na
 Route::post('/property/update', [PropertyController::class, 'propertyUpdate'])->name('property.update');
 Route::post('/property/delete', [PropertyController::class, 'propertyDelete'])->name('property.delete');
 
+Route::post('/property/image-upload', [PropertyController::class, 'imageUpload'])->name('property.post-image');
+
 
 // User routes
 Route::get('/users/list', [SubAdminUserController::class, 'index'])->name('users.users');

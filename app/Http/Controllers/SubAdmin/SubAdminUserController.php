@@ -15,9 +15,9 @@ class SubAdminUserController extends Controller
     }
     public function index() {
         $properties = $this->property->where('sub_admin_id',Auth::guard('sub-admin')->user()->id)->orderBy('created_at','desc')->get();
-//        $users = $this->user->where('sub_admin_id',Auth::guard('sub-admin')->user()->id)->orderBy('created_at','desc')->paginate(10);
-        $users = $this->user->orderBy('created_at','desc')->paginate(10);
-
+          $users = $this->user->with('property')->whereHas('property', function($query) {
+             $query->where('sub_admin_id',Auth::guard('sub-admin')->user()->id);
+          })->get();
         return view('auth.register',compact('users','properties'));
     }
 }

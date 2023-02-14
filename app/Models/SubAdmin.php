@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\Property;
 class SubAdmin extends Authenticatable
 {
     use HasFactory;
@@ -16,4 +17,8 @@ class SubAdmin extends Authenticatable
         'password',
         'status',
     ];
+
+    public function property() {
+        return $this->hasMany(Property::class,'sub_admin_id','id');
+    }
 }
