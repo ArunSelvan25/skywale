@@ -59,6 +59,14 @@ class PropertyController extends Controller
     }
 
     public function imageUpload(Request $request) {
-        dd($request->file('file')->getClientOriginalName());
+    dd($request->all());
+       return $this->commonImageUpload($request->file,'property',Auth::guard('sub-admin')->user()->id);
+    }
+
+    public function commonImageUpload($attachment, $type,$id)
+    {
+
+
+
     }
 }

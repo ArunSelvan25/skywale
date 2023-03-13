@@ -16,7 +16,7 @@ class CreatePropertiesTable extends Migration
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('sub_admin_id');
-            $table->foreign('sub_admin_id')->references('id')->on('sub_admins');
+            $table->foreign('sub_admin_id')->references('id')->on('sub_admins')->onDelete('cascade');
             $table->string('name');
             $table->longText('description');
             $table->longText('address');

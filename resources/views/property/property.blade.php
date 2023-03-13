@@ -7,7 +7,7 @@
             <div class="card-body">
                 <h4 class="card-title">Property Form</h4>
                 <div class="main-panel">
-                    <div class="content-wrapper">
+                    <div class="">
                         <div class="card">
                             <div class="card-body">
                                 <div class="col-md-12">
@@ -34,10 +34,13 @@
                                                                     <td>{{ $record->address }}</td>
                                                                     <td>
                                                                         <div class="row col-md-12">
-                                                                            <div class="form-group col-md-6">
+                                                                            <div class="form-group col-md-4">
                                                                                 <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editProperty-{{$record->id}}">Edit</button>
                                                                             </div>
-                                                                            <div class="form-group col-md-6">
+                                                                            <div class="form-group col-md-4">
+                                                                                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addPropertyImage-{{$record->id}}">Add Image</button>
+                                                                            </div>
+                                                                            <div class="form-group col-md-4">
                                                                                 <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#deleteProperty-{{$record->id}}">Delete</button>
                                                                             </div>
                                                                         </div>
@@ -133,6 +136,40 @@
                                                                 </div>
                                                                 {{-- Edit modal end --}}
 
+                                                                {{-- Image Modal --}}
+                                                                <div class="modal fade" id="addPropertyImage-{{$record->id}}" tabindex="-1" role="dialog" aria-labelledby="addImageModal" aria-hidden="true">
+                                                                    <div class="modal-dialog modal-lg" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title" id="addImageModal">Add image(s)</h5>
+                                                                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+
+                                                                                <div class="modal-body">
+                                                                                    <div class="grid-margin stretch-card">
+                                                                                        <div class="card">
+                                                                                            <div class="card-body">
+                                                                                                <h4 class="card-title">Drop image of property {{$record->name}}</h4>
+                                                                                                <form action="{{ route('property.post-image') }}" class="dropzone" id="my-dropzone">
+                                                                                                    @csrf
+                                                                                                    <input type="hidden" name="id" class="form-control" value="{{$record->id}}"/>
+                                                                                                </form>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="modal-footer">
+                                                                                    <button type="submit" class="btn btn-success">Submit</button>
+                                                                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                                                                                </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                {{-- Image Modal End --}}
+
                                                                 {{-- Delete Modal --}}
                                                                 <div class="modal fade" id="deleteProperty-{{$record->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                     <div class="modal-dialog modal-lg" role="document">
@@ -158,10 +195,13 @@
                                                                                 </div>
                                                                             </form>
 
+
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 {{-- Delete Modal End --}}
+
+
                                                             @endforeach
                                                             </tbody>
                                                         </table>
@@ -252,16 +292,10 @@
                                                         <button type="submit" class="btn btn-success">Success</button>
                                                     </div>
                                                 </div>
+
                                             </form>
 
-                                            <div class="grid-margin stretch-card">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">DropZOne</h4>
-                                                        <form action="{{ route('property.post-image') }}" class="dropzone" id="my-dropzone">@csrf</form>
-                                                    </div>
-                                                </div>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>

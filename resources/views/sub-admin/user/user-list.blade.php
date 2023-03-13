@@ -7,7 +7,7 @@
             <div class="card-body">
                 <h4 class="card-title">User Form</h4>
                 <div class="main-panel">
-                    <div class="content-wrapper">
+                    <div class="">
                         <div class="card">
                             <div class="card-body">
                                 <div class="col-md-12">

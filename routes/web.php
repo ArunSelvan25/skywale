@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\SubAdminAuthConroller;
 use App\Http\Controllers\SubAdmin\PropertyController;
 use App\Http\Controllers\SubAdmin\SubAdminUserController;
+use App\Http\Controllers\SubAdmin\SubAdminProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +45,9 @@ Route::get('/sub-admin/register', [SubAdminAuthConroller::class, 'getRegister'])
 Route::post('/sub-admin/register', [SubAdminAuthConroller::class, 'postRegister'])->name('sub-admin.post-register');
 Route::get('/sub-admin/dashboard', [SubAdminAuthConroller::class, 'dashboard'])->name('sub-admin.dashboard');
 Route::post('/sub-admin/logout', [SubAdminAuthConroller::class, 'logout'])->name('sub-admin.logout');
+Route::get('/sub-admin/profile', [SubAdminProfileController::class, 'profileView'])->name('sub-admin.profile');
+Route::post('/sub-admin/profile-image-upload', [SubAdminProfileController::class, 'profileImageUpload'])->name('sub-admin.profile.image-upload');
+Route::get('/sub-admin/get-profile-image', [SubAdminProfileController::class, 'profileImageView'])->name('sub-admin.profile.get-profile-image');
 
 // Property routes
 Route::get('/property/list', [PropertyController::class, 'index'])->name('property.property');

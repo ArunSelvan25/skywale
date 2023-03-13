@@ -23,12 +23,11 @@
     <ul class="navbar-nav navbar-nav-right">
         <li class="nav-item nav-profile dropdown">
         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-            <img src="{{ asset('images/logo/avatar_skywale.png') }}" alt="profile"/>
+            <img src="{{ asset('storage/sub-admin/profile/hrm-profile-'.\Auth::guard('sub-admin')->user()->id.'/'.\Auth::guard('sub-admin')->user()->profile) }}" alt="profile"/>
         </a>
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-            <a class="dropdown-item">
-            <i class="ti-settings text-primary"></i>
-            {{ Auth::guard('sub-admin')->user()->name}}
+            <a class="dropdown-item" href="{{ route('sub-admin.profile') }}">
+                {{ Auth::guard('sub-admin')->user()->name}}
             </a>
             <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
